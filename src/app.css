@@ -64,7 +64,7 @@ input {
 .movie-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 button {
@@ -159,11 +159,9 @@ img {
 @keyframes expand {
   from {
     opacity: 0;
-    margin: 0rem 0 2rem 0;
     height: 200px;
   }
   to {
-    margin: 3rem 0 2rem 0;
     opacity: 1;
     height: 400px;
   }
@@ -182,8 +180,40 @@ img {
   }
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   main {
     max-width: none;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    display: unset;
+  }
+  #app {
+    padding: 0;
+  }
+  main {
+    overflow: hidden;
+  }
+  .app-title {
+    font-size: 3rem;
+  }
+  input {
+    width: 100%;
+    height: 30px;
+  }
+  .overlay-container {
+    width: 100%;
+    height: auto;
+  }
+  .overlay-content {
+    display: grid;
+    gap: 25px;
+  }
+  .tile-button {
+    width: 95%;
+  }
+  .img img {
+    max-height: 260px;
   }
 }

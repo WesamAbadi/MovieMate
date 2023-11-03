@@ -64,8 +64,12 @@
   });
 </script>
 
-<main>
-  <h1>Welcome to {name}!</h1>
+<main style={movieList.length === 0 ? "padding: 22vh 1em" : "padding: 2em"}>
+  <h1
+    class="app-title"
+  >
+    Welcome to {name}!
+  </h1>
   <div class="controlls">
     <input type="text" placeholder="Start typing.." on:input={handleInput} />
     {#if movieList.length > 0}
