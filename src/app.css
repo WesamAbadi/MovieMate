@@ -59,6 +59,7 @@ input {
 .tile-button {
   width: 400px;
   height: 400px;
+  padding: 0;
 }
 .movie-list {
   display: flex;
@@ -104,7 +105,7 @@ tile {
 .container {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding: 2%;
   border-radius: 2rem;
   max-width: 618px;
@@ -114,33 +115,45 @@ img {
   border-radius: 2rem;
 }
 .overlay-container {
-  height: 400px;
-  animation-name: expand;
-  animation-duration: 1s;
-  margin: 3rem 0 2rem 0;
-  opacity: 1;
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  height: 400px;
+  width: 70%;
+  margin: 3rem auto 2rem auto;
+  border-radius: 1rem;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  animation: expand 0.7s;
 }
 
 .overlay-content {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
-.overlay-content img {
-  max-height: 200px;
+.movie-info {
+  border-collapse: collapse;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
+
+.movie-info td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
 .close-button {
   position: absolute;
   top: 10px;
   right: 10px;
   cursor: pointer;
-  font-size: 20px;
 }
 
 @keyframes expand {

@@ -3,6 +3,7 @@
   import { createEventDispatcher } from "svelte";
 
   const dispatch = createEventDispatcher();
+  console.log(selectedMovie);
 
   function closeOverlay() {
     dispatch("closeOverlay");
@@ -13,9 +14,30 @@
   <div class="overlay-container">
     <div class="overlay-content">
       <div class="img"><img src={selectedMovie.Poster} alt="" /></div>
-      <a href={selectedMovie.Url}>
-        <div class="title">{selectedMovie.Title}</div>
-      </a>
+      <div class="movie-info">
+        <table>
+          <tr>
+            <td>Title:</td>
+            <td>{selectedMovie.Title}</td>
+          </tr>
+          <tr>
+            <td>IMDB:</td>
+            <td
+              ><a href={"https://www.imdb.com/title/" + selectedMovie.imdbID}
+                >View on IMDB</a
+              ></td
+            >
+          </tr>
+          <tr>
+            <td>Type:</td>
+            <td>{selectedMovie.Type}</td>
+          </tr>
+          <tr>
+            <td>Year:</td>
+            <td>{selectedMovie.Year}</td>
+          </tr>
+        </table>
+      </div>
       <button class="close-button" on:click={closeOverlay}>&times;</button>
     </div>
   </div>
