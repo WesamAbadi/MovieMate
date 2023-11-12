@@ -65,9 +65,7 @@
 </script>
 
 <main style={movieList.length === 0 ? "padding: 22vh 1em" : "padding: 2em"}>
-  <h1
-    class="app-title"
-  >
+  <h1 class="app-title">
     Welcome to {name}!
   </h1>
   <div class="controlls">
