@@ -29,6 +29,14 @@
             >
           </tr>
           <tr>
+            <td>Watch:</td>
+            <td
+              ><a target="_blank" href={"https://vidsrc.to/embed/movie/" + selectedMovie.imdbID}
+                >Watch</a
+              ></td
+            >
+          </tr>
+          <tr>
             <td>Type:</td>
             <td>{selectedMovie.Type}</td>
           </tr>
