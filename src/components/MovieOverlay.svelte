@@ -30,10 +30,17 @@
           </tr>
           <tr>
             <td>Watch:</td>
-            <td
-              ><a target="_blank" href={"https://vidsrc.to/embed/movie/" + selectedMovie.imdbID}
+            <td>
+            {#if selectedMovie.Type === "movie"}
+            <a target="_blank" href={"https://vidsrc.to/embed/movie/" + selectedMovie.imdbID}
                 >Watch</a
-              ></td
+              >
+            {:else}
+            <a target="_blank" href={"https://vidsrc.to/embed/tv/" + selectedMovie.imdbID}
+                >Watch</a
+              >
+            {/if}
+              </td
             >
           </tr>
           <tr>
