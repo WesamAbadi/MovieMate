@@ -31,17 +31,24 @@
           <tr>
             <td>Watch:</td>
             <td>
-            {#if selectedMovie.Type === "movie"}
-            <a target="_blank" href={"https://vidsrc.to/embed/movie/" + selectedMovie.imdbID}
-                >Watch</a
-              >
-            {:else}
-            <a target="_blank" href={"https://vidsrc.to/embed/tv/" + selectedMovie.imdbID}
-                >Watch</a
-              >
-            {/if}
-              </td
-            >
+               <a
+                  href={"/watch/" + selectedMovie.imdbID}
+                  >test</a
+                >
+              {#if selectedMovie.Type === "movie"}
+                <a
+                  target="_blank"
+                  href={"https://vidsrc.to/embed/movie/" + selectedMovie.imdbID}
+                  >Watch</a
+                >
+              {:else}
+                <a
+                  target="_blank"
+                  href={"https://vidsrc.to/embed/tv/" + selectedMovie.imdbID}
+                  >Watch</a
+                >
+              {/if}
+            </td>
           </tr>
           <tr>
             <td>Type:</td>

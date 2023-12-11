@@ -1,6 +1,6 @@
 <script>
-  import MovieTile from "./components/MovieTile.svelte";
-  import MovieOverlay from "./components/MovieOverlay.svelte";
+  import MovieTile from "../components/MovieTile.svelte";
+  import MovieOverlay from "../components/MovieOverlay.svelte";
   let name = "MovieMate";
   import { onMount } from "svelte";
   import axios from "axios";
