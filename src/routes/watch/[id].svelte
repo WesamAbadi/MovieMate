@@ -7,12 +7,21 @@
 
   let apiKey = import.meta.env.VITE_OMDB_API_KEY;
   export let id;
-  const url = `https://omdbapi.com/?i=${id}&apikey=${apiKey}`;
   let movieData;
   let watchId = id;
   let type = "tv";
 
+  const url = `https://omdbapi.com/?i=${watchId}&apikey=${apiKey}`;
+
   onMount(async () => {
+    const urlParts = window.location.pathname.split("/");
+    const urlType = urlParts.find((part) => part === "watch")
+      ? urlParts[urlParts.indexOf("watch") + 1]
+      : null;
+
+    if (urlType === "movie") {
+      type = urlType;
+    }
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -25,9 +34,8 @@
       console.error("Error fetching movie data:", error);
     }
     console.log(movieData);
-    if (movieData.Type === "movie") {
+    if (type === "movie") {
       console.log("movie");
-      type = "movie";
     }
   });
 </script>
@@ -40,17 +48,23 @@
     <iframe
       src="https://vidsrc.to/embed/{type}/{watchId}"
       title="Iframe example"
-      frameborder="0" allowfullscreen width="100%" height="700px" class="movie" id="testframe"></iframe>
+      frameborder="0"
+      allowfullscreen
+      width="100%"
+      height="700px"
+      class="movie"
+      id="testframe"
+    ></iframe>
   {:else}
     <p>Loading...</p>
   {/if}
 </main>
 
 <style>
-  .jw-icon[button=vidsrc]{
+  .jw-icon[button="vidsrc"] {
     display: none !important;
   }
-  iframe{
+  iframe {
     border-radius: 2rem;
   }
 </style>

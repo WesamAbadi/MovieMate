@@ -33,7 +33,7 @@
             <td>
                 <a
                   target="_blank"
-                  href={"/watch/" + selectedMovie.imdbID}
+                  href={`/watch/${selectedMovie.Type}/${selectedMovie.imdbID}`}
                   >Watch</a
                 >
             </td>

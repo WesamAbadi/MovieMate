@@ -11,6 +11,7 @@
   <div>
     <Route path="/" component={Page} />
     <Route path="/about" component={About} />
-    <Route path="/watch/:id" component={Id} />
+    <Route path="/watch/movie/:id" component={Id} />
+    <Route path="/watch/series/:id" component={Id} />
   </div>
 </Router>

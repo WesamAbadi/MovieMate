@@ -39,13 +39,17 @@
   const recommendData = async () => {
     const url =
       "https://api.consumet.org/movies/dramacool/info?id=drama-detail/vincenzo";
-
+    const url2 = "https://vidsrc.to/vapi/movie/new/";
     try {
-      const { data } = await axios.get(url);
-      movieData = data;
-      console.log("movieData: ", movieData);
-    } catch (err) {
-      console.error(err.message);
+      const response = await fetch(url2);
+      const data = await response.json();
+      if ("Title" in data) {
+        movieData = data;
+      } else {
+        console.error("Invalid response format");
+      }
+    } catch (error) {
+      console.error("Error fetching movie data:", error);
     }
   };
 
@@ -78,12 +82,6 @@
     <MovieOverlay {selectedMovie} on:closeOverlay={handleCloseOverlay} />
   {/if}
   <div>
-    <!-- {#if movieData}
-      <h5>Movie Title: {movieData.title}</h5>
-      <p>Description: {movieData.description}</p>
-    {:else}
-      <p>Loading...</p>
-    {/if} -->
     {#if movieList.length > 0}
       <h5>
         ({movieList.length} results)
@@ -102,5 +100,8 @@
     {:else}
       <p>{errors}</p>
     {/if}
+  </div>
+  <div class="latest">
+    <!-- <h5>Latest</h5> -->
   </div>
 </main>
