@@ -32,7 +32,6 @@
             <td>Watch:</td>
             <td>
                 <a
-                  target="_blank"
                   href={`/watch/${selectedMovie.Type}/${selectedMovie.imdbID}`}
                   >Watch</a
                 >

@@ -13,7 +13,7 @@
 
   const url = `https://omdbapi.com/?i=${watchId}&apikey=${apiKey}`;
 
-  onMount(async () => {
+  const fetchOMDB = async () => {
     const urlParts = window.location.pathname.split("/");
     const urlType = urlParts.find((part) => part === "watch")
       ? urlParts[urlParts.indexOf("watch") + 1]
@@ -37,6 +37,10 @@
     if (type === "movie") {
       console.log("movie");
     }
+  };
+
+  onMount(() => {
+    fetchOMDB();
   });
 </script>
 
@@ -61,9 +65,6 @@
 </main>
 
 <style>
-  .jw-icon[button="vidsrc"] {
-    display: none !important;
-  }
   iframe {
     border-radius: 2rem;
   }
