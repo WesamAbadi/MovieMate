@@ -25,10 +25,15 @@ a:hover {
 
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
 }
 
 h1 {
@@ -41,10 +46,13 @@ h1 {
 }
 
 #app {
-  max-width: 1280px;
+  max-width: max-content;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
+  position: relative;
+  z-index: 1;
 }
 .controlls {
   display: flex;
@@ -63,6 +71,7 @@ input {
 }
 .movie-list {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
 }
