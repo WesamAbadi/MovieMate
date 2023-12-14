@@ -79,7 +79,7 @@
           frameborder="0"
           allowfullscreen
           width="100%"
-          height="700px"
+          height="100%"
           class="movie"
           id="testframe"
         ></iframe>
